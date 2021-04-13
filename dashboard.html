@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/dashboard.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+
+    <div class="dashboard">
+        <div class="dashboard__sidebar">
+            <div class="dashboard__sidebar-menu">
+                <div class="dashboard__sidebar-menu-main _active">Головна</div>
+                <div class="dashboard__sidebar-menu-tasks">Завдання</div>
+                <div class="dashboard__sidebar-menu-calendar">Створити завдання</div>
+                <div class="dashboard__sidebar-menu-exit">Вихід</div>
+            </div>
+            <div class="dashboard__sidebar-language"></div>
+        </div>
+
+        
+        <div class="dashboard__brc-logo">
+            <img src="img/brc-client.png" alt="">
+        </div>
+        <div class="dashboard__client">Rhenus Revival</div>
+
+
+        <div class="dashboard__data-month"></div>
+        <div class="dashboard__data-year _active">
+                <canvas id="myChart" width="780" height="340"></canvas>
+        </div>
+        <div class="dashboard__last-task"></div>
+
+        <div class="dashboard__tasks">Some Tasks</div>
+
+
+
+    </div>
+
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="chart-config.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

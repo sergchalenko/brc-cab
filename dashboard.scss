@@ -1,0 +1,153 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1476f2;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+.dashboard {
+    position: absolute;
+    width: 1200px;
+    height: 800px;
+    background-color: #f1f9fd;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+
+    &__tasks {
+        position: absolute;
+        top: 40px;
+        left: 380px;
+        width: 780px;
+        height: 720px;
+        background-color: white;
+        transform: scale(0);
+        visibility: hidden;
+    }
+
+    &__tasks._active {
+        transform: scale(1);
+        visibility: visible;
+    }
+
+    & > div {
+        overflow: hidden;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0px 6px 12px 0px rgba(33, 142, 225, 0.09);
+    }
+
+    &__brc-logo{
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        width: 70px;
+        height: 70px;
+        box-shadow: none !important;
+
+        & img {
+            width: 100%;
+        }
+    }
+
+    &__client {
+        position: absolute;
+        top: 40px;
+        left: 130px;
+        width: 150px;
+        height: 70px;
+        box-shadow: none !important;
+        background-color: transparent !important;
+        display: flex;
+        align-items: center;
+        color: #4a4a4a;
+        font-weight: 700;
+    }
+
+    &__data-year {
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+        width: 780px;
+        height: 340px;
+        transition: all .2s ease-in-out;
+        transform: scale(0);
+        visibility: hidden;
+    }
+
+    &__data-year._active {
+        transform: scale(1);
+        visibility: visible;
+    }
+
+    &__data-month {
+        position: absolute;
+        top: 40px;
+        left: 380px;
+        width: 480+px;
+        height: 340px;
+    }
+
+    &__last-task {
+        position: absolute;
+        top: 40px;
+        left: 900px;
+        width: 260px;
+        height: 340px;
+    }
+
+    &__sidebar {
+        position: absolute;
+        top: 150px;
+        left: 40px;
+        bottom: 40px;
+        width: 300px;
+
+        &-menu {
+            margin-top: 100px;
+
+            &-main._active {
+                background-color: #1476f2 !important;
+                color: white;
+            }
+
+            &-tasks._active {
+                background-color: #1476f2 !important;
+                color: white;
+            }
+
+            & > div {
+                padding: 10px 0 10px 30px;
+                background-color:#f1f9fd;
+                font-size: 14px;
+                font-weight: 600;
+                margin-bottom: 3px;
+                cursor: pointer;
+                transition: all .2s ease;
+                user-select: none;
+            }
+
+            & > div:hover {
+                background-color: #c2dfee;
+            }
+
+            
+        }
+
+        &-language {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 30px;
+            bottom: 30px;
+            background-color: black;
+            border-radius: 50%;
+        }
+    }
+}
