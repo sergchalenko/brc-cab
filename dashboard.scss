@@ -1,3 +1,5 @@
+@import "vars";
+
 * {
     padding: 0;
     margin: 0;
@@ -79,6 +81,24 @@ body {
         transition: all .2s ease-in-out;
         transform: scale(0);
         visibility: hidden;
+
+        &-graph {
+            position: absolute;
+            width: 100%;
+            top: 15px;
+        }
+
+        &-name {
+            display: block;
+            position: absolute;
+            width: 100%;
+            padding: 12px 0 12px 12px;
+            background-color: #1476f2;
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
     }
 
     &__data-year._active {
@@ -92,14 +112,70 @@ body {
         left: 380px;
         width: 480+px;
         height: 340px;
+
+        &-name {
+            display: block;
+            position: absolute;
+            width: 100%;
+            padding: 12px 0 12px 12px;
+            background-color: #1476f2;
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        &-graph {
+            width: 250px;
+            height: 250px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &-full {
+            position: absolute;
+            top: 80px;
+            right: 150px;
+            height: 100px;
+            text-align: center;
+            color: $text-gray;
+
+            & p:first-child {
+                font-size: 10px;
+                font-weight: 700;
+                padding: 0px 0px 10px 0px;
+                display: block;
+                border-bottom: solid 1px rgb(155, 155, 155);
+            }
+        }
     }
 
-    &__last-task {
+    &__data-fullyear {
         position: absolute;
         top: 40px;
         left: 900px;
         width: 260px;
         height: 340px;
+
+        &-graph {
+            width: 100%;
+            top: 15px;
+            position: absolute;
+            padding-top: 30px;
+        }
+
+        &-name {
+            display: block;
+            position: absolute;
+            width: 100%;
+            padding: 12px 0 12px 12px;
+            background-color: #1476f2;
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
     }
 
     &__sidebar {
@@ -150,4 +226,11 @@ body {
             border-radius: 50%;
         }
     }
+}
+
+
+#chart-month {
+    position: absolute;
+    height: 100px;
+    width: 50px;
 }
