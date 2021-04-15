@@ -22,30 +22,269 @@ body {
     transform: translateX(-50%);
     border-radius: 10px;
 
-    &__tasks {
+    &__data-main {
+        position: absolute;
+        top: 40px;
+        left: 380px;
+        width: 780px;
+        height: 720px;
+        transition: all .2s ease;
+        transform: scale(0);
+        visibility: hidden;
+
+        &._active {
+            transform: scale(1);
+            visibility: visible;
+        }
+
+        &>div {
+            overflow: hidden;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0px 6px 12px 0px rgba(33, 142, 225, 0.09);
+        }
+
+        .dashboard__data-month {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 480px;
+            height: 340px;
+
+            &-name {
+                display: block;
+                position: absolute;
+                width: 100%;
+                padding: 12px 0 12px 12px;
+                background-color: #1476f2;
+                color: white;
+                font-size: 10px;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+
+            &-graph {
+                width: 250px;
+                height: 250px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            &-text {
+                position: absolute;
+                top: 55px;
+                right: 50px;
+                height: 100px;
+                text-align: center;
+                color: white;
+                display: flex;
+                flex-direction: column;
+
+
+                &-block {
+                    width: 100%;
+                    margin-bottom: 10px;
+                    background-color: $main-blue;
+                    padding: 10px;
+                    border-radius: 10px;
+                    user-select: none;
+
+
+                    &>p:first-child {
+                        font-size: 10px;
+                        font-weight: 600;
+                        display: block;
+                    }
+
+                    &>p:last-child {
+                        font-size: 20px;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+
+        .dashboard__data-year {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            height: 340px;
+            transition: all .2s ease-in-out;
+
+            &-graph {
+                position: absolute;
+                width: 100%;
+                top: 15px;
+            }
+
+            &-name {
+                display: block;
+                position: absolute;
+                width: 100%;
+                padding: 12px 0 12px 12px;
+                background-color: #1476f2;
+                color: white;
+                font-size: 10px;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+        }
+
+
+
+        .dashboard__data-fullyear {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 260px;
+            height: 340px;
+
+            &-graph {
+                width: 100%;
+                top: 15px;
+                position: absolute;
+                padding-top: 30px;
+            }
+
+            &-name {
+                display: block;
+                position: absolute;
+                width: 100%;
+                padding: 12px 0 12px 12px;
+                background-color: #1476f2;
+                color: white;
+                font-size: 10px;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+        }
+
+
+    }
+
+    #task-scroll::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        background-color: #F5F5F5;
+    }
+
+    #task-scroll::-webkit-scrollbar {
+        width: 12px;
+        background-color: #F5F5F5;
+    }
+
+    #task-scroll::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+        background-color: #555;
+    }
+
+
+    &__data-tasks {
         position: absolute;
         top: 40px;
         left: 380px;
         width: 780px;
         height: 720px;
         background-color: white;
+        overflow: auto;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0px 6px 12px 0px rgba(33, 142, 225, 0.09);
+        transition: all .2s ease;
         transform: scale(0);
         visibility: hidden;
+        padding: 30px;
+
+
+
+        .task-body {
+            display: flex;
+            align-items: stretch;
+            font-size: 12px;
+            margin-bottom: 10px;
+
+
+
+
+            .task-number {
+                background-color: $main-blue;
+                color: white;
+                border-radius: 10px 0px 0px 10px;
+                flex: 0 1 8%
+            }
+
+            .task-desc {
+                flex: 0 1 70%;
+            }
+
+            .task-status {
+                flex: 0 1 12%;
+
+                &._work {
+                    color: rgb(247, 28, 57);
+                    font-weight: 600;
+                }
+
+                &._wait {
+                    color: rgb(255, 102, 0);
+                    font-weight: 600;
+                }
+
+                &._done {
+                    color: rgb(29, 208, 74);
+                    font-weight: 600;
+                }
+            }
+
+            .task-date {
+                flex: 0 1 10%;
+                border-radius: 0px 10px 10px 0px;
+            }
+
+
+
+            &>div {
+                padding: 10px;
+                background-color: $light-gray;
+                border: solid 1px rgb(204, 204, 204);
+                text-align: center;
+            }
+        }
+
+
     }
 
-    &__tasks._active {
+    &__data-tasks._active {
         transform: scale(1);
         visibility: visible;
     }
 
-    & > div {
-        overflow: hidden;
+    &__data-create {
+        position: absolute;
+        top: 40px;
+        left: 380px;
+        width: 780px;
+        height: 720px;
+        background-color: white;
+        overflow: auto;
         border-radius: 10px;
         background-color: #fff;
         box-shadow: 0px 6px 12px 0px rgba(33, 142, 225, 0.09);
+        transition: all .2s ease;
+        transform: scale(0);
+        visibility: hidden;
+        padding: 30px;
+
+        &._active {
+            transform: scale(1);
+            visibility: visible;
+        }
     }
 
-    &__brc-logo{
+    &__brc-logo {
         position: absolute;
         top: 40px;
         left: 40px;
@@ -72,118 +311,16 @@ body {
         font-weight: 700;
     }
 
-    &__data-year {
-        position: absolute;
-        bottom: 40px;
-        right: 40px;
-        width: 780px;
-        height: 340px;
-        transition: all .2s ease-in-out;
-        transform: scale(0);
-        visibility: hidden;
-
-        &-graph {
-            position: absolute;
-            width: 100%;
-            top: 15px;
-        }
-
-        &-name {
-            display: block;
-            position: absolute;
-            width: 100%;
-            padding: 12px 0 12px 12px;
-            background-color: #1476f2;
-            color: white;
-            font-size: 10px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-    }
-
-    &__data-year._active {
-        transform: scale(1);
-        visibility: visible;
-    }
-
-    &__data-month {
-        position: absolute;
-        top: 40px;
-        left: 380px;
-        width: 480+px;
-        height: 340px;
-
-        &-name {
-            display: block;
-            position: absolute;
-            width: 100%;
-            padding: 12px 0 12px 12px;
-            background-color: #1476f2;
-            color: white;
-            font-size: 10px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        &-graph {
-            width: 250px;
-            height: 250px;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        &-full {
-            position: absolute;
-            top: 80px;
-            right: 150px;
-            height: 100px;
-            text-align: center;
-            color: $text-gray;
-
-            & p:first-child {
-                font-size: 10px;
-                font-weight: 700;
-                padding: 0px 0px 10px 0px;
-                display: block;
-                border-bottom: solid 1px rgb(155, 155, 155);
-            }
-        }
-    }
-
-    &__data-fullyear {
-        position: absolute;
-        top: 40px;
-        left: 900px;
-        width: 260px;
-        height: 340px;
-
-        &-graph {
-            width: 100%;
-            top: 15px;
-            position: absolute;
-            padding-top: 30px;
-        }
-
-        &-name {
-            display: block;
-            position: absolute;
-            width: 100%;
-            padding: 12px 0 12px 12px;
-            background-color: #1476f2;
-            color: white;
-            font-size: 10px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-    }
-
     &__sidebar {
         position: absolute;
         top: 150px;
         left: 40px;
         bottom: 40px;
         width: 300px;
+        overflow: hidden;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0px 6px 12px 0px rgba(33, 142, 225, 0.09);
 
         &-menu {
             margin-top: 100px;
@@ -198,9 +335,9 @@ body {
                 color: white;
             }
 
-            & > div {
+            &>div {
                 padding: 10px 0 10px 30px;
-                background-color:#f1f9fd;
+                background-color: #f1f9fd;
                 font-size: 14px;
                 font-weight: 600;
                 margin-bottom: 3px;
@@ -209,21 +346,29 @@ body {
                 user-select: none;
             }
 
-            & > div:hover {
+            &>div:hover {
                 background-color: #c2dfee;
             }
 
-            
+
         }
 
         &-language {
             position: absolute;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             left: 30px;
             bottom: 30px;
-            background-color: black;
+            background-color: $main-blue;
+            color: white;
             border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            font-size: 12px;
+            user-select: none;
+            cursor: pointer;
         }
     }
 }
@@ -234,3 +379,5 @@ body {
     height: 100px;
     width: 50px;
 }
+
+

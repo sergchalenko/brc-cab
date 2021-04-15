@@ -64,7 +64,7 @@ var fullYear = new Chart(ctx3, {
         labels: ['Замовлено', 'Використано'],
         datasets: [{
             label: 'Кількість годин по договору',
-            data: [600, 120],
+            data: [500, 120],
             backgroundColor: [
                 'rgba(20, 118, 242, 1)',
                 'rgba(255, 99, 132, 1)'
